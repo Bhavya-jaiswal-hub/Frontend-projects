@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.main {
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  border: 3px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.maincenter {
+  height: 50%;
+  width: 50%;
+  background-color: yellow;
+  border: 2px solid black;
+  position: absolute;
+}
+
+.maincenter {
+     position: relative;
+     display: inline-block;
+     overflow: hidden;
+   }
+   
+   .maincenter::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 50%;
+     width: 0;
+     height: 4px;
+     background-color: blue;
+     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+     transform: translateX(-50%); /* Centers the line initially */
+   }
+   
+   .maincenter:hover {
+     transform: scale(1.1); /* Scale the element */
+   }
+   
+   .maincenter:hover::before {
+     width: 100%; /* Expand the width to the full size */
+     left: 0; /* Move the starting point to the left edge */
+   }
+   
